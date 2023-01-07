@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+/*======REST======*/
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	display: block;
+	object-fit: cover;
+	object-position: center;
+	height: 100%;
+}
+/*======VARIABLES=======*/
+/*---COLOR---*/
+$primary: hsl(276, 81%, 52%);
+$secondary: hsl(215, 91%, 48%);
+$bg: hsl(0, 12%, 90%);
+$overlay: hsla(236, 55%, 62%, 0.616);
+$clr-white: hsl(0, 0%, 100%);
+$clr-black: hsla(0, 0%, 0%, 0.549);
+$card: hsl(0, 0%, 95%);
+$radius: 0.3rem;
+$f-family: 'Roboto', sans-serif;
+
+/*=====DEFAULT======*/
+body {
+	background-color: $bg;
+	font-family: $f-family;
+	line-height: 1.5;
+	transition: all 0.3s linear;
+}
+/*======CONTAINE=======*/
+.container {
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0 2rem;
+}
+
+/*======HEADER=======*/
+header {
+	display: flex;
+	width: 100%;
+	background-color: $primary;
+	height: 5rem;
+	margin-bottom: 1.25rem;
+	padding: 0 1.25rem;
+	align-items: center;
+	justify-content: space-between;
+
+	.cart-icon {
+		font-size: 2.5rem;
+		color: $clr-white;
+		cursor: pointer;
+	}
+}
+
+/*-----MAIN-------*/
+main {
+	h1 {
+		text-align: center;
+		font-size: 2.5rem;
+		text-transform: capitalize;
+		margin-bottom: 2rem;
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			transform: translate(-50%, -50%);
+			border-radius: $radius;
+			top: 95%;
+			left: 50%;
+			height: 0.2rem;
+			width: 12rem;
+			background-color: $secondary;
+		}
+	}
+}
+
+/*-----SECTION-------*/
+section {
+	display: flex;
+	margin-bottom: 4.25rem;
+
+	.card-container {
+		width: 80%;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+		grid-gap: 1rem;
+		border-radius: $radius;
+
+		.pic {
+			height: 17rem;
+			width: 17rem;
+		}
+
+		.body-img {
+			position: relative;
+			border: 0.1rem solid #0000008c;
+			border-radius: 0.3rem;
+		}
+
+		.title {
+			position: absolute;
+			top: 1.25rem;
+			left: 1.25rem;
+			text-transform: uppercase;
+			font-weight: bold;
+			padding: 0.5rem 0.625rem;
+			color: $clr-white;
+			border-radius: 0.3rem;
+		}
+	}
+	.bag {
+		.title {
+			background-color: #0000008c;
+		}
+	}
+	.tech {
+		.title {
+			background-color: #835f5f8c;
+		}
+	}
+	.shoes {
+		.title {
+			background-color: #69aeb38c;
+		}
+	}
+
+	.card {
+		padding: 1.25rem;
+		border-radius: 0.5rem;
+		background-color: rgb(250, 248, 248);
+	}
+
+	.content {
+		padding: 1.25rem;
+
+		h2 {
+			font-weight: 400;
+			font-size: 1.5rem;
+			padding: 0.625rem;
+		}
+
+		p {
+			opacity: 0.5;
+			font-size: 1.1rem;
+			line-height: 1.8;
+		}
+
+		.content-top {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: #d330308c;
+			padding: 0.5rem;
+			color: $clr-white;
+			border-radius: 0.2rem;
+		}
+	}
+
+	.btn {
+		display: block;
+		font-size: 1.2rem;
+		margin: 0.5rem auto;
+		padding: 0.625rem 1.25rem;
+		background-color: $primary;
+		border-radius: $radius;
+		color: $clr-white;
+		cursor: pointer;
+		transition: all 0.5s ease-in-out;
+
+		&:hover {
+			background-color: $secondary;
+		}
+	}
+}
+
+/*------ASIDE------*/
+aside {
+	width: 20%;
+	background-color: rgb(224, 216, 216);
+	border-radius: $radius;
+	margin-left: 1rem;
+	text-align: center;
+
+	.filter-btn {
+		background-color: skyblue;
+		padding: 0.625rem;
+		margin: 0.5rem;
+		cursor: pointer;
+		transition: all 0.5s ease;
+
+		&:hover {
+			opacity: 0.6;
+			color: $clr-white;
+		}
+	}
+	.active {
+		background-color: #d330308c;
+	}
+	.card-img {
+		width: 200px;
+	}
+}
+
+/*------MEDIA QUERY------*/
+@media (max-width: 968px) {
+	/*---WRAPPER--*/
+	section {
+		flex-wrap: wrap;
+		.card-container {
+			width: 100%;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		aside {
+			width: 100%;
+			margin-top: 1rem;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	/*---WRAPPER--*/
+	section {
+		flex-wrap: wrap;
+
+		.card-container {
+			width: 100%;
+			grid-template-columns: 1fr;
+		}
+
+		aside {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+}
