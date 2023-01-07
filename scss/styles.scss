@@ -30,10 +30,11 @@ $secondary: hsl(215, 91%, 48%);
 $bg: hsl(0, 12%, 90%);
 $overlay: #9821e873;
 $clr-white: hsl(0, 0%, 100%);
-$clr-black: hsla(0, 0%, 0%, 0.549);
+$clr-black: hsla(0, 0%, 0%, 100%);
 $card: hsl(0, 0%, 95%);
 $radius: 0.3rem;
 $f-family: 'Roboto', sans-serif;
+$trash: rgb(243, 108, 108);
 
 /*=====DEFAULT======*/
 body {
@@ -62,9 +63,122 @@ header {
 	align-items: center;
 	justify-content: space-between;
 
+	/*------CART------*/
+	.cart {
+		position: fixed;
+		top: 0;
+		right: 0;
+		right: -100%;
+		width: 360px;
+		height: 100vh;
+		overflow-y: hidden;
+		overflow-x: hidden;
+		padding: 1.25rem;
+		background-color: $bg;
+		border: 0.2rem solid $primary;
+		box-shadow: -0.2rem solid 0.4rem $secondary;
+		transition: 1.5s;
+
+		&.active {
+			right: 0;
+			transition: 0.5s ease;
+		}
+
+		.cart-title {
+			text-align: center;
+			font-size: 1.5rem;
+			font-weight: 600;
+			margin-bottom: 2rem;
+		}
+		.cart-box {
+			display: grid;
+			grid-template-columns: 32% 50% 18%;
+			align-items: center;
+			margin-top: 1rem;
+			padding: 1rem;
+			border: 0.1rem solid #ccc;
+			grid-gap: 1rem;
+		}
+		.cart-img {
+			width: 100px;
+			height: 100px;
+			padding: 0.625rem;
+			border-radius: $radius;
+			border: 0.2rem solid $primary;
+		}
+		.info {
+			display: grid;
+			row-gap: 0.5rem;
+
+			.cart-product-title {
+				font-size: 1.1rem;
+				text-transform: capitalize;
+			}
+			.cart-price {
+				font-weight: 600;
+			}
+			.cart-quantity {
+				border: 0.1rem solid $primary;
+				outline: $secondary;
+				width: 2.4rem;
+				text-align: center;
+				font-size: 1.1rem;
+			}
+		}
+		.cart-delete {
+			font-size: 2rem;
+			color: $trash;
+			cursor: pointer;
+		}
+	}
 	.cart-icon {
 		font-size: 2.5rem;
 		color: $clr-white;
+		cursor: pointer;
+	}
+
+	/*-----total-----*/
+	.total-content {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 1.5rem;
+		border-top: 0.1rem solid $primary;
+
+		.total-title {
+			font-size: 1.1rem;
+			font-weight: 600;
+		}
+		.total-price {
+			font-size: 1.1rem;
+			font-weight: normal;
+			margin-left: 0.5rem;
+		}
+	}
+	.btn-buy {
+		display: flex;
+		margin: 1.5rem auto 0 auto;
+		padding: 0.625rem 1.25rem;
+		background-color: $primary;
+		color: $clr-white;
+		font-size: 1.1rem;
+		font-weight: 500;
+		border-radius: 5rem;
+		letter-spacing: 0.1rem;
+		cursor: pointer;
+		transition: 0.2s ease-in-out;
+
+		&:hover {
+			letter-spacing: 0.3rem;
+			background-color: $secondary;
+		}
+	}
+	.cart-close {
+		position: absolute;
+		top: 1rem;
+		right: 0.8rem;
+		font-size: 2rem;
+		font-weight: bolder;
+		color: $clr-black;
 		cursor: pointer;
 	}
 }
@@ -115,7 +229,7 @@ section {
 			border: 0.2rem solid $primary;
 		}
 
-		.title {
+		.category-title {
 			position: absolute;
 			top: 1.25rem;
 			left: 1.25rem;
@@ -127,17 +241,17 @@ section {
 		}
 	}
 	.bag {
-		.title {
+		.category-title {
 			background-color: $overlay;
 		}
 	}
 	.tech {
-		.title {
+		.category-title {
 			background-color: #835f5f8c;
 		}
 	}
 	.shoes {
-		.title {
+		.category-title {
 			background-color: #69aeb38c;
 		}
 	}

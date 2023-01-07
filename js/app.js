@@ -83,10 +83,10 @@ function renderProducts() {
 		const { date, comment, name, imgSrc, category } = items;
 		allProducts.innerHTML += `
   
-  <div class="card">
+  <div class="card bag">
   <div class="body-img">
     <img src="${imgSrc}" alt="" class="pic" alt="${name}"/>
-    <span class="title">${category}</span>
+    <span class="category-title">${category}</span>
   </div>
   <div class="content">
     <div class="content-top">
