@@ -28,7 +28,7 @@ img {
 $primary: hsl(276, 81%, 52%);
 $secondary: hsl(215, 91%, 48%);
 $bg: hsl(0, 12%, 90%);
-$overlay: hsla(236, 55%, 62%, 0.616);
+$overlay: #9821e873;
 $clr-white: hsl(0, 0%, 100%);
 $clr-black: hsla(0, 0%, 0%, 0.549);
 $card: hsl(0, 0%, 95%);
@@ -112,11 +112,7 @@ section {
 		.body-img {
 			position: relative;
 			border-radius: 0.3rem;
-			transition: all 0.3 ease-in-out;
-
-			&:hover {
-				border: 0.2rem solid #0000008c;
-			}
+			border: 0.2rem solid $primary;
 		}
 
 		.title {
@@ -132,7 +128,7 @@ section {
 	}
 	.bag {
 		.title {
-			background-color: $primary;
+			background-color: $overlay;
 		}
 	}
 	.tech {
@@ -150,6 +146,11 @@ section {
 		padding: 1.25rem;
 		border-radius: 0.5rem;
 		background-color: rgb(250, 248, 248);
+		transition: all 0.3 ease-in-out;
+
+		&:hover {
+			background: $overlay;
+		}
 	}
 
 	.content {

@@ -102,10 +102,7 @@ section .card-container .pic {
 section .card-container .body-img {
   position: relative;
   border-radius: 0.3rem;
-  transition: all 0.3 ease-in-out;
-}
-section .card-container .body-img:hover {
-  border: 0.2rem solid #0000008c;
+  border: 0.2rem solid #9821e8;
 }
 section .card-container .title {
   position: absolute;
@@ -118,7 +115,7 @@ section .card-container .title {
   border-radius: 0.3rem;
 }
 section .bag .title {
-  background-color: #9821e8;
+  background-color: #9821e873;
 }
 section .tech .title {
   background-color: #835f5f8c;
@@ -130,6 +127,10 @@ section .card {
   padding: 1.25rem;
   border-radius: 0.5rem;
   background-color: #faf8f8;
+  transition: all 0.3 ease-in-out;
+}
+section .card:hover {
+  background: #9821e873;
 }
 section .content {
   padding: 1.25rem;

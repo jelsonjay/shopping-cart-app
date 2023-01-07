@@ -5,6 +5,8 @@ const products = [
 		name: 'Louis Vitton',
 		price: 29.99,
 		instock: 100,
+		date: 'June, 01 2020',
+		comment: 52,
 		category: 'Bag',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.',
@@ -15,6 +17,8 @@ const products = [
 		name: 'MacBook Pro',
 		price: 24.99,
 		instock: 43,
+		date: 'April, 11, 2021',
+		comment: 62,
 		category: 'Technology',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.',
@@ -25,6 +29,8 @@ const products = [
 		name: 'Nike',
 		price: 19.99,
 		instock: 10,
+		date: 'May, 20, 2020',
+		comment: 152,
 		category: 'Shoes',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.',
@@ -35,6 +41,8 @@ const products = [
 		name: 'Air Jordan Nike',
 		price: 25.99,
 		instock: 5,
+		date: 'July, 19, 2022',
+		comment: 72,
 		category: 'Shoes',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.',
@@ -45,6 +53,8 @@ const products = [
 		name: 'Louis Vitton',
 		price: 29.99,
 		instock: 4,
+		date: 'March, 08, 2021',
+		comment: 82,
 		category: 'Bag',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.',
@@ -55,6 +65,8 @@ const products = [
 		name: 'Mac',
 		price: 39.99,
 		instock: 40,
+		date: 'January, 05 2023',
+		comment: 52,
 		category: 'Technology',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.',
@@ -68,18 +80,18 @@ const allProducts = document.querySelector('.card-container');
 // render products
 function renderProducts() {
 	products.forEach(items => {
-		const { id, name, imgSrc, category } = items;
+		const { date, comment, name, imgSrc, category } = items;
 		allProducts.innerHTML += `
   
-  <div class="card bag">
+  <div class="card">
   <div class="body-img">
     <img src="${imgSrc}" alt="" class="pic" alt="${name}"/>
     <span class="title">${category}</span>
   </div>
   <div class="content">
     <div class="content-top">
-      <span><i class="bx bxs-calendar"></i>May 01 2024</span>
-      <span><i class="bx bxs-comment"></i>16</span>
+      <span><i class="bx bxs-calendar"></i>${date}</span>
+      <span><i class="bx bxs-comment"></i>${comment}</span>
     </div>
     <h2>${name}</h2>
     <label>Size:</label>
