@@ -17,6 +17,7 @@ li {
 }
 img {
 	max-width: 100%;
+	aspect-ratio: 1/1;
 	display: block;
 	object-fit: cover;
 	object-position: center;
@@ -110,8 +111,12 @@ section {
 
 		.body-img {
 			position: relative;
-			border: 0.1rem solid #0000008c;
 			border-radius: 0.3rem;
+			transition: all 0.3 ease-in-out;
+
+			&:hover {
+				border: 0.2rem solid #0000008c;
+			}
 		}
 
 		.title {
@@ -127,7 +132,7 @@ section {
 	}
 	.bag {
 		.title {
-			background-color: #0000008c;
+			background-color: $primary;
 		}
 	}
 	.tech {
@@ -166,10 +171,25 @@ section {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			background-color: #d330308c;
+			background-color: $primary;
 			padding: 0.5rem;
 			color: $clr-white;
-			border-radius: 0.2rem;
+			border-radius: 2rem;
+		}
+		.add-cart {
+			position: relative;
+			bottom: 0;
+			right: 0;
+			font-size: 2rem;
+			background-color: $primary;
+			border-radius: 0.5rem;
+			color: $clr-white;
+			padding: 0.625rem;
+			cursor: pointer;
+		}
+		div {
+			display: flex;
+			justify-content: space-between;
 		}
 	}
 

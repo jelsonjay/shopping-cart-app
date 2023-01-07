@@ -82,14 +82,17 @@ function renderProducts() {
       <span><i class="bx bxs-comment"></i>16</span>
     </div>
     <h2>${name}</h2>
-    <label>Size</label>
-    <select>
+    <label>Size:</label>
+    <div>
+       <select>
+      <option>Select</option>
       <option>S</option>
       <option>M</option>
       <option>L</option>
       <option>XXL</option>
     </select>
-<i class="bx bx-cart add-cart"></i>
+    <i class="bx bx-cart add-cart"></i>
+    </div>
 
   </div>
 </div>

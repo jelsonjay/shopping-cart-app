@@ -20,6 +20,7 @@ li {
 
 img {
   max-width: 100%;
+  aspect-ratio: 1/1;
   display: block;
   object-fit: cover;
   object-position: center;
@@ -100,8 +101,11 @@ section .card-container .pic {
 }
 section .card-container .body-img {
   position: relative;
-  border: 0.1rem solid #0000008c;
   border-radius: 0.3rem;
+  transition: all 0.3 ease-in-out;
+}
+section .card-container .body-img:hover {
+  border: 0.2rem solid #0000008c;
 }
 section .card-container .title {
   position: absolute;
@@ -114,7 +118,7 @@ section .card-container .title {
   border-radius: 0.3rem;
 }
 section .bag .title {
-  background-color: #0000008c;
+  background-color: #9821e8;
 }
 section .tech .title {
   background-color: #835f5f8c;
@@ -144,10 +148,25 @@ section .content .content-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #d330308c;
+  background-color: #9821e8;
   padding: 0.5rem;
   color: white;
-  border-radius: 0.2rem;
+  border-radius: 2rem;
+}
+section .content .add-cart {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  font-size: 2rem;
+  background-color: #9821e8;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.625rem;
+  cursor: pointer;
+}
+section .content div {
+  display: flex;
+  justify-content: space-between;
 }
 section .btn {
   display: block;
