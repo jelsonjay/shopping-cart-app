@@ -80,7 +80,7 @@ const allProducts = document.querySelector('.card-container');
 // render products
 function renderProducts() {
 	products.forEach(items => {
-		const { date, comment, name, imgSrc, category } = items;
+		const { price, date, comment, name, imgSrc, category } = items;
 		allProducts.innerHTML += `
   
   <div class="card bag">
@@ -93,9 +93,10 @@ function renderProducts() {
       <span><i class="bx bxs-calendar"></i>${date}</span>
       <span><i class="bx bxs-comment"></i>${comment}</span>
     </div>
-    <h2>${name}</h2>
+    <h2 class="product-title">${name}</h2>
+    <p class="product-price">£ ${price}</p>
     <label>Size:</label>
-    <div>
+
        <select>
       <option>Select</option>
       <option>S</option>
@@ -104,7 +105,7 @@ function renderProducts() {
       <option>XXL</option>
     </select>
     <i class="bx bx-cart add-cart"></i>
-    </div>
+ 
 
   </div>
 </div>
@@ -119,3 +120,97 @@ function addCart(id) {
 	console.log(id);
 }
 addCart();
+
+// open and close cart
+const cartIcon = document.querySelector('.cart-icon');
+const openCloseCart = document.querySelector('.cart-close');
+const cart = document.querySelector('.cart');
+
+cartIcon.addEventListener('click', () => {
+	cart.classList.add('active');
+});
+openCloseCart.addEventListener('click', () => {
+	cart.classList.remove('active');
+});
+
+// start when the document is ready
+if (document.readyState == 'loading') {
+	document.addEventListener('DOMContentLoaded', start);
+} else {
+	start();
+}
+
+// ======== START =========
+function start() {
+	addEvents();
+}
+// ======== UPDATE & RENDER =========
+function update() {
+	addEvents();
+	updateTotal();
+}
+// ======== ADD EVENTS =========
+function addEvents() {
+	const removeItem = [...document.querySelectorAll('.cart-delete')];
+	console.log(removeItem);
+	removeItem.forEach(elem => {
+		elem.addEventListener('click', handleRemoveCart);
+	});
+
+	// ----change item quantity
+	let cartQuantityInput = [...document.querySelectorAll('.cart-quantity')];
+	cartQuantityInput.forEach(input => {
+		input.addEventListener('change', handleChangeQty);
+	});
+
+	//-----Add item to cart-------
+	let addToCart = [...document.querySelectorAll('.add-cart')];
+	addToCart.forEach(addCart => {
+		addCart.addEventListener('click', handleAddToCart);
+	});
+	console.log(addToCart, 'ADD TO CART');
+}
+
+// ======== HANDLE EVENTS FUNCTIONS =========
+function handleAddToCart() {
+	let product = this.parentElement;
+	let title = product.querySelector('.product-title');
+	let price = product.querySelector('.product-price');
+	//let productImg = product.querySelector('.pic').src;
+
+	console.log(title, price);
+}
+
+function handleRemoveCart() {
+	this.parentElement.remove();
+
+	update();
+}
+// ======== CHANGE QUANTITY =========
+function handleChangeQty() {
+	if (isNaN(this.value) || this.value < 1) {
+		this.value = 1;
+	}
+	this.value = Math.floor(this.value); // keep integer
+
+	update();
+}
+
+// ======== UPDATE & RERENDER FUNCTIONS =========
+function updateTotal() {
+	let cartCards = [...document.querySelectorAll('.cart-box')];
+	const totalItem = cart.querySelector('.total-price');
+	let total = 0;
+	cartCards.forEach(cartBox => {
+		let priceItem = cartBox.querySelector('.cart-price');
+		let price = parseFloat(priceItem.innerHTML.replace('£', ''));
+		let quantity = cartBox.querySelector('.cart-quantity').value;
+		total += price * quantity;
+	});
+
+	// -- keep only 2 digits after the decimal point
+	total = total.toFixed(2);
+	//total = Math.round(total * 100) / 100;
+
+	totalItem.innerHTML = '£' + total;
+}
