@@ -68,7 +68,7 @@ header {
 		position: fixed;
 		top: 0;
 		right: 0;
-		/* right: -100%;*/
+		right: -100%;
 		width: 360px;
 		height: 100vh;
 		overflow-y: hidden;
@@ -78,6 +78,7 @@ header {
 		border: 0.2rem solid $primary;
 		box-shadow: -0.2rem solid 0.4rem $secondary;
 		transition: 1.5s;
+		z-index: 999;
 
 		&.active {
 			right: 0;

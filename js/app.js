@@ -1,4 +1,3 @@
-//import products from './js/product.js';
 const products = [
 	{
 		id: 1,
@@ -50,7 +49,7 @@ const products = [
 	},
 	{
 		id: 5,
-		name: 'Louis Vitton',
+		name: 'Louis Vitton Brown',
 		price: 29.99,
 		instock: 4,
 		date: 'March, 08, 2021',
@@ -77,7 +76,7 @@ const products = [
 const allProducts = document.querySelector('.card-container');
 //const addToCart = document.querySelector("#addToCart");
 
-// render products
+// ======RENDER HTML COMPONENTS======
 function renderProducts() {
 	products.forEach(items => {
 		const { price, date, comment, name, imgSrc, category } = items;
@@ -85,7 +84,7 @@ function renderProducts() {
   
   <div class="card bag">
   <div class="body-img">
-    <img src="${imgSrc}" alt="" class="pic" alt="${name}"/>
+    <img src="${imgSrc}" class="pic" alt="${name}"/>
     <span class="category-title">${category}</span>
   </div>
   <div class="content">
@@ -96,8 +95,8 @@ function renderProducts() {
     <h2 class="product-title">${name}</h2>
     <p class="product-price">£ ${price}</p>
     <label>Size:</label>
-
-       <select>
+    <div>
+      <select>
       <option>Select</option>
       <option>S</option>
       <option>M</option>
@@ -105,6 +104,7 @@ function renderProducts() {
       <option>XXL</option>
     </select>
     <i class="bx bx-cart add-cart"></i>
+    </div>
  
 
   </div>
@@ -168,22 +168,55 @@ function addEvents() {
 	addToCart.forEach(addCart => {
 		addCart.addEventListener('click', handleAddToCart);
 	});
-	console.log(addToCart, 'ADD TO CART');
+	//console.log(addToCart, 'ADD TO CART');
+
+	// BUY ORDER
+	const buyBtn = document.querySelector('.btn-buy');
+	buyBtn.addEventListener('click', handleBuyOrder);
 }
 
 // ======== HANDLE EVENTS FUNCTIONS =========
-function handleAddToCart() {
-	let product = this.parentElement;
-	let title = product.querySelector('.product-title');
-	let price = product.querySelector('.product-price');
-	//let productImg = product.querySelector('.pic').src;
+let = repeatedItem = [];
 
-	console.log(title, price);
+function handleAddToCart() {
+	let product = this.parentNode.parentNode.parentNode;
+	let title = product.querySelector('.product-title').innerHTML;
+	let price = product.querySelector('.product-price').innerHTML;
+	let productImg = product.querySelector('.pic').src;
+
+	console.log(title, price, productImg);
+	// NEW ADD TO
+	let newAddTo = {
+		title,
+		price,
+		productImg
+	};
+
+	// ITEM REPETED
+	if (repeatedItem.find(elem => elem.title === newAddTo.title)) {
+		alert('This item is already existe, try add new item please!');
+		return;
+	} else {
+		repeatedItem.push(newAddTo);
+	}
+
+	// ------ADD PRODUCT TO CART-----
+	let addNewToCart = AddNewToCart(title, price, productImg);
+	let newNode = document.createElement('div');
+	newNode.innerHTML = addNewToCart;
+	const newCartContent = cart.querySelector('.cart-content');
+	newCartContent.appendChild(newNode);
+
+	update();
 }
 
 function handleRemoveCart() {
 	this.parentElement.remove();
-
+	repeatedItem = repeatedItem.filter(
+		elem =>
+			elem.title !=
+			this.parentElement.querySelector('.cart-product-title').innerHTML
+	);
 	update();
 }
 // ======== CHANGE QUANTITY =========
@@ -193,6 +226,19 @@ function handleChangeQty() {
 	}
 	this.value = Math.floor(this.value); // keep integer
 
+	update();
+}
+
+function handleBuyOrder() {
+	if (repeatedItem.length <= 0) {
+		alert('There is no order \nPlease make an order!');
+		return;
+	}
+	const cartContent = cart.querySelector('.cart-content');
+	cartContent.innerHTML = '';
+	alert('Your order is in placed successfull. \n Thank You!');
+
+	repeatedItem = [];
 	update();
 }
 
@@ -213,4 +259,19 @@ function updateTotal() {
 	//total = Math.round(total * 100) / 100;
 
 	totalItem.innerHTML = '£' + total;
+}
+
+// ======RENDER HTML COMPONENTS======
+function AddNewToCart(title, price, productImg) {
+	return `			
+						<div class="cart-box">
+							<img src="${productImg}" class="cart-img" alt="cart-img" />
+							<div class="info">
+								<div class="cart-product-title">${title}</div>
+								<div class="cart-price">${price}</div>
+								<input type="number" value="1" class="cart-quantity" />
+							</div>
+							<i class="bx bxs-trash-alt cart-delete"></i>
+						</div>
+  `;
 }

@@ -63,7 +63,7 @@ header .cart {
   position: fixed;
   top: 0;
   right: 0;
-  /* right: -100%;*/
+  right: -100%;
   width: 360px;
   height: 100vh;
   overflow-y: hidden;
@@ -73,6 +73,7 @@ header .cart {
   border: 0.2rem solid #9821e8;
   box-shadow: -0.2rem solid 0.4rem #0b68ea;
   transition: 1.5s;
+  z-index: 999;
 }
 header .cart.active {
   right: 0;
