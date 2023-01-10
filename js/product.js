@@ -2,7 +2,7 @@ const products = [
 	{
 		id: 1,
 		name: 'Louis Vitton',
-		price: 29.99,
+		price: 129.99,
 		instock: 100,
 		date: 'June, 01 2020',
 		comment: 52,
@@ -12,7 +12,7 @@ const products = [
 	{
 		id: 2,
 		name: 'MacBook Pro',
-		price: 24.99,
+		price: 924.99,
 		instock: 43,
 		date: 'April, 11, 2021',
 		comment: 62,
@@ -31,18 +31,18 @@ const products = [
 	},
 	{
 		id: 4,
-		name: 'Air Jordan Nike',
-		price: 25.99,
+		name: 'Sunglasses',
+		price: 95.99,
 		instock: 5,
 		date: 'July, 19, 2022',
 		comment: 72,
-		category: 'Shoes',
-		imgSrc: './images/nike-1.png'
+		category: 'Glasses',
+		imgSrc: './images/sunglasses.png'
 	},
 	{
 		id: 5,
 		name: 'Louis Vitton Brown',
-		price: 29.99,
+		price: 229.99,
 		instock: 4,
 		date: 'March, 08, 2021',
 		comment: 82,
@@ -54,29 +54,29 @@ const products = [
 		name: 'Mac',
 		price: 39.99,
 		instock: 40,
-		date: 'January, 05 2023',
+		date: 'January, 05, 2023',
 		comment: 52,
 		category: 'Technology',
 		imgSrc: './images/apple-mac.png'
 	},
 	{
 		id: 7,
-		name: 'Mac',
+		name: 'Nike',
 		price: 39.99,
 		instock: 40,
-		date: 'January, 05 2023',
+		date: 'March, 19, 2023',
 		comment: 52,
-		category: 'Technology',
-		imgSrc: './images/apple-mac.png'
+		category: 'Sport',
+		imgSrc: './images/nike-red.png'
 	},
 	{
 		id: 8,
-		name: 'Mac',
-		price: 39.99,
+		name: 'iPad Pro',
+		price: 139.99,
 		instock: 40,
-		date: 'January, 05 2023',
+		date: 'December, 15, 2022',
 		comment: 52,
 		category: 'Technology',
-		imgSrc: './images/apple-mac.png'
+		imgSrc: './images/ipad-pro.jpg'
 	}
 ];
