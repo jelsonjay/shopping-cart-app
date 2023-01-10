@@ -213,7 +213,7 @@ section {
 	margin-bottom: 4.25rem;
 
 	.card-container {
-		width: 80%;
+		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
 		grid-gap: 1rem;
@@ -323,34 +323,6 @@ section {
 		&:hover {
 			background-color: $secondary;
 		}
-	}
-}
-
-/*------ASIDE------*/
-aside {
-	width: 20%;
-	background-color: rgb(224, 216, 216);
-	border-radius: $radius;
-	margin-left: 1rem;
-	text-align: center;
-
-	.filter-btn {
-		background-color: skyblue;
-		padding: 0.625rem;
-		margin: 0.5rem;
-		cursor: pointer;
-		transition: all 0.5s ease;
-
-		&:hover {
-			opacity: 0.6;
-			color: $clr-white;
-		}
-	}
-	.active {
-		background-color: #d330308c;
-	}
-	.card-img {
-		width: 200px;
 	}
 }
 

@@ -197,7 +197,7 @@ section {
   margin-bottom: 4.25rem;
 }
 section .card-container {
-  width: 80%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   grid-gap: 1rem;
@@ -290,32 +290,6 @@ section .btn {
 }
 section .btn:hover {
   background-color: #0b68ea;
-}
-
-/*------ASIDE------*/
-aside {
-  width: 20%;
-  background-color: #e0d8d8;
-  border-radius: 0.3rem;
-  margin-left: 1rem;
-  text-align: center;
-}
-aside .filter-btn {
-  background-color: skyblue;
-  padding: 0.625rem;
-  margin: 0.5rem;
-  cursor: pointer;
-  transition: all 0.5s ease;
-}
-aside .filter-btn:hover {
-  opacity: 0.6;
-  color: white;
-}
-aside .active {
-  background-color: #d330308c;
-}
-aside .card-img {
-  width: 200px;
 }
 
 /*------MEDIA QUERY------*/
