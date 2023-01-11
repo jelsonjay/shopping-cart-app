@@ -63,6 +63,13 @@ header {
 	align-items: center;
 	justify-content: space-between;
 
+	p {
+		font-size: 2rem;
+		font-weight: bold;
+		text-transform: capitalize;
+		color: $clr-white;
+	}
+
 	/*------CART------*/
 	.cart {
 		position: fixed;
@@ -335,10 +342,6 @@ section {
 			width: 100%;
 			grid-template-columns: repeat(2, 1fr);
 		}
-		aside {
-			width: 100%;
-			margin-top: 1rem;
-		}
 	}
 }
 
@@ -350,11 +353,6 @@ section {
 		.card-container {
 			width: 100%;
 			grid-template-columns: 1fr;
-		}
-
-		aside {
-			width: 100%;
-			margin-left: 0;
 		}
 	}
 }

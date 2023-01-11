@@ -59,6 +59,12 @@ header {
   /*------CART------*/
   /*-----total-----*/
 }
+header p {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: white;
+}
 header .cart {
   position: fixed;
   top: 0;
@@ -302,10 +308,6 @@ section .btn:hover {
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
   }
-  section aside {
-    width: 100%;
-    margin-top: 1rem;
-  }
 }
 @media (max-width: 768px) {
   /*---WRAPPER--*/
@@ -315,10 +317,6 @@ section .btn:hover {
   section .card-container {
     width: 100%;
     grid-template-columns: 1fr;
-  }
-  section aside {
-    width: 100%;
-    margin-left: 0;
   }
 }
 
