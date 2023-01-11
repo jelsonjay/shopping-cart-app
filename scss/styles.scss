@@ -34,7 +34,7 @@ $clr-black: hsla(0, 0%, 0%, 100%);
 $card: hsl(0, 0%, 95%);
 $radius: 0.3rem;
 $f-family: 'Roboto', sans-serif;
-$trash: rgb(243, 108, 108);
+$trash: rgb(240, 15, 15);
 
 /*=====DEFAULT======*/
 body {
@@ -209,7 +209,7 @@ main {
 			left: 50%;
 			height: 0.2rem;
 			width: 12rem;
-			background-color: $secondary;
+			background-color: $primary;
 		}
 	}
 }

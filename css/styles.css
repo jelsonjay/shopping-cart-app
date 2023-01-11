@@ -127,7 +127,7 @@ header .cart .info .cart-quantity {
 }
 header .cart .cart-delete {
   font-size: 2rem;
-  color: #f36c6c;
+  color: #f00f0f;
   cursor: pointer;
 }
 header .cart-icon {
@@ -194,7 +194,7 @@ main h1::after {
   left: 50%;
   height: 0.2rem;
   width: 12rem;
-  background-color: #0b68ea;
+  background-color: #9821e8;
 }
 
 /*-----SECTION-------*/
