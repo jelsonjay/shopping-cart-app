@@ -77,7 +77,7 @@ function update() {
 // ======== ADD EVENTS =========
 function addEvents() {
 	const removeItem = [...document.querySelectorAll('.cart-delete')];
-	console.log(removeItem);
+	//console.log(removeItem);
 	removeItem.forEach(elem => {
 		elem.addEventListener('click', handleRemoveCart);
 	});
